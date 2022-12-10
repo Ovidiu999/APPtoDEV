@@ -14,6 +14,15 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.Toast;
+
 import com.example.test2.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -43,15 +52,37 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+        ImageButton homeImageButton = (ImageButton)findViewById(R.id.homeImageButton);
+        ImageButton searchImageButton = (ImageButton)findViewById(R.id.searchImageButton);
+        ImageButton ordersImageButton = (ImageButton)findViewById(R.id.ordersImageButton);
+
+        homeImageButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                navController.navigate(R.id.nav_home);
+            }
+        });
+        searchImageButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                navController.navigate(R.id.nav_gallery);
+            }
+        });
+        ordersImageButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                navController.navigate(R.id.nav_order);
+            }
+        });
 
     }
 
-    /*@Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
-    }*/
+    }
 
     @Override
     public boolean onSupportNavigateUp() {
