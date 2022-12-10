@@ -14,7 +14,13 @@
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.test2.ui.gallery.GalleryFragment"
-        android:label="@string/menu_settings"
+        android:label="@string/menu_search"
         tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_order"
+        android:name="com.example.test2.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_order"
+        tools:layout="@layout/fragment_slideshow"/>
 
 </navigation>
